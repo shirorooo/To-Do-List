@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button fill="clear" color="dark" size="large" (click)="returnLoginPage()">
+      <ion-icon name="log-out-outline"></ion-icon>
+    </ion-button>
+    <ion-title>Trainers List</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div *ngFor="let user of users">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>{{ user.name }}</ion-card-title>
+        <ion-card-subtitle>{{ user.email }}</ion-card-subtitle>
+      </ion-card-header>
+
+      <ion-card-content>
+        Trainer age: {{ user.age }}
+      </ion-card-content>
+
+      <ion-button size="small" shape="round" (click)="updateTrainer(user.name, user.age, user.email, user.password)">Update</ion-button>
+      <ion-button color="danger" size="small" shape="round" (click)="deleteTrainer(user.email)">Delete</ion-button>
+    </ion-card>
+  </div>
+
+  <ion-fab slot="fixed" vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="add" (click)="addNewTrainer()"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
+
+

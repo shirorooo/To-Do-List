@@ -1,0 +1,26 @@
+ion-content{
+  --background: white;
+
+  img{
+    width: 50px;
+  }
+
+  ion-card{
+    margin-top: 180px;
+  }
+
+  ion-button{
+    width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .options:hover{
+    color: red;
+  }
+
+  #warning-message{
+    color: red;
+  }
+}
